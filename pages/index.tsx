@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer";
 import { GoalSection } from "../components/Goals";
 import { PomodoroSection } from "../components/Pomodoro";
 import { TaskCreatorSection } from "../components/TaskCreator";
+import { util } from "../lib/util";
 
 const HomePage: NextPage = (): JSX.Element => {
   return (

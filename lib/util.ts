@@ -1,4 +1,5 @@
 class Util {
+  public time: string;
   public genString(length: number): string {
     let result = "";
     const chars =
@@ -9,7 +10,7 @@ class Util {
     }
     return result;
   }
-  public getDate(): number {
+  public getDate() {
     const date = new Date();
     const time =
       date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
@@ -18,7 +19,21 @@ class Util {
         date.getMonth()
       )} ${date.getDate()}, ${date.getFullYear()} ${time}`
     ).getTime();
-    return today;
+    const interval = setInterval(() => {
+      const distanceBetween = today - new Date().getTime();
+      const d = Math.floor(distanceBetween / (1000 * 60 * 60 * 24));
+      const h = Math.floor(
+        (distanceBetween % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const m = Math.floor((distanceBetween % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distanceBetween % (1000 * 60)) / 1000);
+      this.time = `${d}d ${h}h ${m}m ${s}s`;
+      if (distanceBetween < 0) {
+        clearInterval(interval);
+        this.time = "Time's up!";
+      }
+    });
+    return interval;
   }
   public getMonth(month: number): string {
     switch (month + 1) {

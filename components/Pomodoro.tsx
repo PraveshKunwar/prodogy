@@ -1,4 +1,4 @@
-import { Timer } from "./sub_components/Timer";
+import { Timer } from "./sub/Timer";
 
 export const PomodoroSection: React.FC = (): JSX.Element => {
   return (

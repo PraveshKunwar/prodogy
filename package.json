@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "prettier": "npx prettier --config .prettierrc **/*.{ts,tsx} --write",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx && prettier"
   },
   "dependencies": {
     "next": "11.1.0",
