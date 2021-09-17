@@ -16,7 +16,7 @@ class Util {
       date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     const today = new Date(
       `${this.getMonth(
-        date.getMonth()
+        date.getMonth() + 1
       )} ${date.getDate()}, ${date.getFullYear()} ${time}`
     ).getTime();
     const interval = setInterval(() => {
